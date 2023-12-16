@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
 
 spring:
 
@@ -16,6 +16,8 @@ spring:
 
   kafka:
     required: false
+    bootstrap-servers: localhost:9092
+    group-id: sovath-test-1
 
 application-config:
   microservices:
