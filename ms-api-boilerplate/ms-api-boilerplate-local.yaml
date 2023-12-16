@@ -25,6 +25,24 @@ spring:
       port: 6379
       password: UOWMh5uVKi
       timeout: 3000
+jpa:
+  hibernate:
+    ddl-auto: update
+  show-sql: false
+  properties:
+    hibernate:
+      format_sql: true
+
+logging:
+  level:
+    org:
+      springframework:
+        boot: OFF
+        web: OFF
+
+  pattern:
+    date-format: yyyy-dd-MM HH:mm:ss.SSS
+    console: '%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%-20.20thread] %-38X{X-CorrelationId:-00000000-0000-0000-0000-000000000000} %-30.30logger{0} : %msg%n'
 
 application-config:
   microservices:
