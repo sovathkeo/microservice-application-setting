@@ -25,6 +25,9 @@ spring:
       port: 6379
       password: UOWMh5uVKi
       timeout: 3000
+  bus:
+    enabled: true
+
 jpa:
   hibernate:
     ddl-auto: update
@@ -64,5 +67,5 @@ logging:
 application-config:
   microservices:
     ocs-service:
-      base-url: "https://prd-apiserver.camgsm.com.kh/services/surepay"
+      base-url: "https://prd-apiserver.camgsm.com.kh/services/surepay-1"
 
