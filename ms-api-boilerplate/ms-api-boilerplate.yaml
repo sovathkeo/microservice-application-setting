@@ -14,3 +14,15 @@ spring:
     hikari:
       connection-timeout: 3000
 
+  kafka:
+    required: false
+    bootstrap-servers: localhost:9092
+    group-id: sovath-test-1
+
+  data:
+    redis:
+      host: 172.16.102.164
+      port: 32075
+      password: UOWMh5uVKi
+      timeout: 3000
+
