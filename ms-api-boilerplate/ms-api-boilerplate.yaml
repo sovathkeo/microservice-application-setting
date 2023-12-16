@@ -2,6 +2,7 @@ server:
   port: 80
 
 spring:
+
   application:
     name: ms-api-boilerplate
   
@@ -12,4 +13,7 @@ spring:
     password: M$Dem0Dotne!
     hikari:
       connection-timeout: 3000
+
+  cache:
+    type: NONE
 
