@@ -1,3 +1,2 @@
-application-config:
-  global-config:
-    maintenance-mode: OFF
+global-config:
+  maintenance-mode: OFF
