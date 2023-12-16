@@ -14,11 +14,3 @@ spring:
     hikari:
       connection-timeout: 3000
 
-  # cache:
-  #   type: NONE
-
-  # data:
-  #   redis:
-  #     repositories:
-  #       enabled: false
-
