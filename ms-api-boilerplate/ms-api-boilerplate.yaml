@@ -1,3 +1,11 @@
 spring:
   application:
     name: ms-api-boilerplate
+  
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: 'jdbc:sqlserver://localhost:1433;databaseName=demo;trustServerCertificate=true'
+    username: sa
+    password: M$Dem0Dotne!
+    hikari:
+      connection-timeout: 3000
