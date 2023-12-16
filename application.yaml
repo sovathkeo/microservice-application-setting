@@ -1,2 +1,2 @@
-root:
-  application: root-app
+global:
+  maintenance-mode: OFF
