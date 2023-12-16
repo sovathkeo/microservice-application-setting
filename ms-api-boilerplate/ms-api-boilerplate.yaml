@@ -17,8 +17,8 @@ spring:
   cache:
     type: NONE
 
-  data:
-    redis:
-      repositories:
-        enabled: false
+  # data:
+  #   redis:
+  #     repositories:
+  #       enabled: false
 
