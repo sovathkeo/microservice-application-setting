@@ -1,5 +1,5 @@
 server:
-  port: 81
+  port: 8080
 
 spring:
 
@@ -16,4 +16,9 @@ spring:
 
   kafka:
     required: false
+
+application-config:
+  microservices:
+    ocs-service:
+      base-url: "https://prd-apiserver.camgsm.com.kh/services/surepay"
 
