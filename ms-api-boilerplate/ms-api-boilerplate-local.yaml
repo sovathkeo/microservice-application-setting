@@ -33,6 +33,23 @@ jpa:
     hibernate:
       format_sql: true
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  security:
+    enabled: false
+  info:
+    env:
+      enabled: true
+
+  endpoint:
+    health:
+      show-details: always
+  shutdown:
+    enabled: true
+
 logging:
   level:
     org:
