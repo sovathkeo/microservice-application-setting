@@ -8,21 +8,62 @@ spring:
   
   datasource:
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    url: 'jdbc:sqlserver://localhost:1433;databaseName=demo;trustServerCertificate=true'
-    username: sa
-    password: M$Dem0Dotne!
+    url: 'jdbc:sqlserver://172.16.101.29;instance=SQLEXPRESS;databaseName=STG;encrypt=true;trustServerCertificate=true;'
+    username: devadmin
+    password: V@!aDmin2020Devusr
     hikari:
       connection-timeout: 3000
 
   kafka:
-    required: false
-    bootstrap-servers: localhost:9092
+    required: true
+    bootstrap-servers: prd-kaf1.cellcard.com.kh:9092,prd-kaf2.cellcard.com.kh:9092,prd-kaf3.cellcard.com.kh:9092
     group-id: sovath-test-1
+    topic-name: WINGBANK_TREASURE_TOPUP
 
   data:
     redis:
-      host: 172.16.102.164
+      host: 172.16.101.164
       port: 32075
       password: UOWMh5uVKi
       timeout: 3000
+jpa:
+  hibernate:
+    ddl-auto: update
+  show-sql: false
+  properties:
+    hibernate:
+      format_sql: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  security:
+    enabled: false
+  info:
+    env:
+      enabled: true
+
+  endpoint:
+    health:
+      show-details: always
+  shutdown:
+    enabled: true
+
+logging:
+  level:
+    org:
+      springframework:
+        boot: OFF
+        web: OFF
+
+  pattern:
+    date-format: yyyy-dd-MM HH:mm:ss.SSS
+    console: '%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%-20.20thread] %-38X{X-CorrelationId:-00000000-0000-0000-0000-000000000000} %-30.30logger{0} : %msg%n'
+
+application-config:
+  microservices:
+    ocs-service:
+      base-url: "https://prd-apiserver.camgsm.com.kh/services/surepay"
 
