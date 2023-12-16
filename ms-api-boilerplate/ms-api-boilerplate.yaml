@@ -14,5 +14,8 @@ spring:
     hikari:
       connection-timeout: 3000
 
-  profiles: no-redis
+  data:
+    redis:
+      repositories:
+        enabled: false
 
