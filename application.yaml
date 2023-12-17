@@ -1,4 +1,4 @@
-application-conifg:
+application-config:
   global-config:
     maintenance-mode: ON
     available-at: tomorrow
