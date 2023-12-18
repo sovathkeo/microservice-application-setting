@@ -58,6 +58,9 @@ logging:
       springframework:
         boot: OFF
         web: OFF
+      org:
+        apache:
+          kafka: OFF
 
   pattern:
     date-format: yyyy-dd-MM HH:mm:ss.SSS
