@@ -24,7 +24,7 @@ spring:
       password: UOWMh5uVKi
       key-prefix: 'ms-demo:'
       timeout: 3000
-      
+
   bus:
     enabled: true
 
@@ -57,7 +57,7 @@ logging:
   level:
     org:
       springframework:
-        boot: OFF
+        boot: TRACE
         web: OFF
         security: OFF
       apache:
