@@ -9,8 +9,8 @@ spring:
   datasource:
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
     url: ${DATABASE_URL:jdbc:sqlserver://localhost:1433;databaseName=demo;trustServerCertificate=true}
-    username: devadmin
-    password: V@!aDmin2020Devusr
+    username: ${DATABASE_USERNAME:devadmin-1}
+    password: ${DATABASE_PASSWORD:V@!aDmin2020Devusr-1}
     hikari:
       connection-timeout: 3000
 
