@@ -58,8 +58,10 @@ logging:
       springframework:
         boot: OFF
         web: OFF
+        security: OFF
       apache:
           kafka: OFF
+      hibernate: OFF
         
 
   pattern:
