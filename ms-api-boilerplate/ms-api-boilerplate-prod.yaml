@@ -4,13 +4,12 @@ server:
 spring:
 
   application:
-    name: ms-api-boilerplate
-#jdbc:sqlserver://172.16.101.29;instance=SQLEXPRESS;databaseName=STG;encrypt=true;trustServerCertificate=true;  
+    name: ms-api-boilerplate  
   datasource:
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
     url: ${DATABASE_URL:jdbc:sqlserver://localhost:1433;databaseName=demo;trustServerCertificate=true}
-    username: ${DATABASE_USERNAME:devadmin-1}
-    password: ${DATABASE_PASSWORD:V@!aDmin2020Devusr-1}
+    username: ${DATABASE_USERNAME:devadmin}
+    password: ${DATABASE_PASSWORD:V@!aDmin2020Devusr}
     hikari:
       connection-timeout: 3000
 
