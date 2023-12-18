@@ -18,13 +18,13 @@ spring:
     bootstrap-servers: qa-kaf1.camgsm.com.kh:9092
     group-id: sovath-test-1
 
-  data:
-    redis:
+  redis:
       host: 172.16.101.164
       port: 32075
       password: UOWMh5uVKi
       key-prefix: 'ms-demo:'
       timeout: 3000
+      
   bus:
     enabled: true
 
