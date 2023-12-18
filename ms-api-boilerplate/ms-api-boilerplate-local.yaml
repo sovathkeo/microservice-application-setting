@@ -26,7 +26,7 @@ spring:
       password: UOWMh5uVKi
       timeout: 3000
   bus:
-    enabled: true
+    enabled: false
 
 jpa:
   hibernate:
