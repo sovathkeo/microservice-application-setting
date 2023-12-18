@@ -20,9 +20,10 @@ spring:
 
   data:
     redis:
-      host: localhost
-      port: 6379
+      host: 172.16.101.164
+      port: 32075
       password: UOWMh5uVKi
+      key-prefix: 'ms-demo:'
       timeout: 3000
   bus:
     enabled: true
