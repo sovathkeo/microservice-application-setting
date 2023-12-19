@@ -70,7 +70,7 @@ logging:
 
 application-config:
   maintenance-mode: 'ON'
-  maintenance-message: 'Sorry the service is under maintenance! Please try again later.'
+  maintenance-message: 'Individual, Sorry the service is under maintenance! Please try again later.'
   microservices:
     ocs-service:
       base-url: "https://prd-apiserver.camgsm.com.kh/services/surepay"
