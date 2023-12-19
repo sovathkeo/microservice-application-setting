@@ -16,8 +16,8 @@ spring:
         connection-timeout: 3000
 
   kafka:
-    required: false
-    bootstrap-servers: localhost:9092
+    required: true
+    bootstrap-servers: prd-kaf1.cellcard.com.kh:9092,prd-kaf2.cellcard.com.kh:9092,prd-kaf3.cellcard.com.kh:9092
     group-id: sovath-test-1
 
   data:
