@@ -7,12 +7,13 @@ spring:
     name: ms-api-boilerplate
   
   datasource:
-    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    url: 'jdbc:sqlserver://localhost:1433;databaseName=demo;trustServerCertificate=true'
-    username: sa
-    password: M$Dem0Dotne!
-    hikari:
-      connection-timeout: 3000
+    datasource:
+      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+      url: ${DATABASE_URL:jdbc:sqlserver://localhost:1433;databaseName=demo;trustServerCertificate=true}
+      username: ${DATABASE_USERNAME:devadmin}
+      password: ${DATABASE_PASSWORD:V@!aDmin2020Devusr}
+      hikari:
+        connection-timeout: 3000
 
   kafka:
     required: false
