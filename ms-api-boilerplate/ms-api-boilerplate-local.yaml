@@ -58,7 +58,7 @@ logging:
   level:
     org:
       springframework:
-        boot: OFF
+        boot: ERROR
         web: OFF
 
   pattern:
