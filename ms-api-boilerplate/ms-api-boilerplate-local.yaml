@@ -14,6 +14,10 @@ spring:
     hikari:
       connection-timeout: 3000
 
+  cloud:
+    bus:
+      enabled: true
+
   kafka:
     required: true
     bootstrap-servers: prd-kaf1.cellcard.com.kh:9092,prd-kaf2.cellcard.com.kh:9092,prd-kaf3.cellcard.com.kh:9092
