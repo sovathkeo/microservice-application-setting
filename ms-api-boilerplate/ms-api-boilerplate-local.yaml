@@ -52,9 +52,9 @@ management:
 logging:
   level:
     org:
-      springframework:
-        boot: ERROR
-        web: OFF
+      springframework: TRACE
+        #boot: ERROR
+        #web: OFF
 
   pattern:
     date-format: yyyy-dd-MM HH:mm:ss.SSS
