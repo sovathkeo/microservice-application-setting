@@ -25,9 +25,6 @@ spring:
     password: UOWMh5uVKi
     timeout: 3000
 
-  bus:
-    enabled: true
-
 jpa:
   hibernate:
     ddl-auto: update
