@@ -71,5 +71,7 @@ application-config:
   maintenance-message: 'Individual, Sorry the service is under maintenance! Please try again later.'
   microservices:
     ocs-service:
-      base-url: "https://prd-apiserver.camgsm.com.kh/services/surepay-1111"
+      base-url: "https://prd-apiserver.camgsm.com.kh/services/surepay"
+    sms-service:
+      base-url: "https://prd-apiserver.camgsm.com.kh/sms-transmit/v1/accounts/%s"
 
