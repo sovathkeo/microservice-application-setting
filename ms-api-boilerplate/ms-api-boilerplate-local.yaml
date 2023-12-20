@@ -16,7 +16,7 @@ spring:
 
   kafka:
     required: true
-    bootstrap-servers: prd-kaf1.cellcard.com.kh:9092
+    bootstrap-servers: qa-kaf1.camgsm.com.kh:9092
 
   redis:
     host: 172.16.101.164
