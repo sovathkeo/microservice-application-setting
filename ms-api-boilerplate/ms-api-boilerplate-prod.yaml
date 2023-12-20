@@ -4,7 +4,7 @@ server:
 spring:
 
   application:
-    name: boilerplate  
+    name: ms-api-boilerplate  
   datasource:
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
     url: ${DATABASE_URL:jdbc:sqlserver://localhost:1433;databaseName=demo;trustServerCertificate=true}
