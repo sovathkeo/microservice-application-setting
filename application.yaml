@@ -1,5 +1,5 @@
 application-config:
   global-config:
-    maintenance-mode: 'OFF'
+    maintenance-mode: 'OFFF'
     available-at: 'Yesterday'
     maintenance-message: 'Gloably, Sorry the service is under maintenance! Please try again later.'
