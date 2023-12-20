@@ -53,7 +53,7 @@ logging:
   level:
     org:
       springframework:
-        boot: TRACE
+        boot: ERROR
         web: OFF
         security: OFF
       apache:
