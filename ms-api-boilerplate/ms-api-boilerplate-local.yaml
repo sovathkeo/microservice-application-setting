@@ -52,7 +52,7 @@ management:
 logging:
   level:
     org:
-      springframework: ERROR
+      springframework: DEBUG
         #boot: ERROR
         #web: OFF
 
