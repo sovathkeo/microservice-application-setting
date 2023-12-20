@@ -15,7 +15,7 @@ spring:
 
   kafka:
     required: true
-    bootstrap-servers: prd-kaf1.cellcard.com.kh:9092
+    bootstrap-servers: qa-kaf1.camgsm.com.kh:9092
     group-id: sovath-test-1
 
   redis:
@@ -23,9 +23,6 @@ spring:
       port: 32075
       password: UOWMh5uVKi
       timeout: 3000
-
-  bus:
-    enabled: true
 
 jpa:
   hibernate:
