@@ -67,7 +67,7 @@ logging:
 
 application-config:
   maintenance-mode: 'OFF'
-  maintenance-message: 'Individual, Sorry the service is under maintenance! Please try again later.'
+  maintenance-message: 'Sorry the service is under maintenance! Please try again later.'
   endpoints-auth-whitelist:
     - "/v3/api-docs"
     - "/swagger-ui"
