@@ -50,8 +50,6 @@ logging:
   level:
     org:
       springframework: ERROR
-        #boot: ERROR
-        #web: OFF
 
   pattern:
     date-format: yyyy-dd-MM HH:mm:ss.SSS
