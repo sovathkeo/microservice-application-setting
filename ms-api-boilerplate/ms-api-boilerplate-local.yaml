@@ -2,9 +2,6 @@ server:
   port: 9090
 
 spring:
-
-  application:
-    name: ms-api-boilerplate
   
   datasource:
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
