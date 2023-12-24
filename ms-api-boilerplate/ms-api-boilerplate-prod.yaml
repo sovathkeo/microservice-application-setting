@@ -71,9 +71,16 @@ application-config:
     - "/swagger-ui"
     - "/actuator"
     - "/env"
+  global-request-timeout-millisecond: 5
+  global-connect-timeout-millisecond: 10000
   microservices:
     ocs-service:
       base-url: "https://prd-apiserver.camgsm.com.kh/services/surepay"
+      request-timeout-millisecond: 4000
     sms-service:
       base-url: "https://prd-apiserver.camgsm.com.kh/sms-transmit/v1/accounts/%s"
+      request-timeout-millisecond: 4000
+    billing-service:
+      base-url: "https://prd-apiserver.camgsm.com.kh/services/proxyBilling"
+      request-timeout-millisecond: 4000
 
