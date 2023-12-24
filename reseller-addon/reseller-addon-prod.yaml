@@ -1,30 +1,27 @@
 server:
-  port: 8081
+  port: 80
 
 spring:
 
-  application:
-    name: ms-api-boilerplate
-  
   datasource:
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    url: 'jdbc:sqlserver://localhost:1433;databaseName=demo;trustServerCertificate=true'
-    username: sa
-    password: M$Dem0Dotne!
+    url: ${DATABASE_URL:jdbc:sqlserver://localhost:1433;databaseName=demo;trustServerCertificate=true}
+    username: ${DATABASE_USERNAME:devadmin}
+    password: ${DATABASE_PASSWORD:V@!aDmin2020Devusr}
     hikari:
       connection-timeout: 3000
 
   kafka:
-    required: false
-    bootstrap-servers: localhost:9092
+    required: true
+    bootstrap-servers: qa-kaf1.camgsm.com.kh:9092
     group-id: sovath-test-1
 
-  data:
-    redis:
-      host: localhost
-      port: 6379
+  redis:
+      host: 172.16.101.164
+      port: 32075
       password: UOWMh5uVKi
       timeout: 3000
+
 jpa:
   hibernate:
     ddl-auto: update
@@ -54,15 +51,29 @@ logging:
   level:
     org:
       springframework:
-        boot: OFF
+        boot: ERROR
         web: OFF
+        security: OFF
+      apache:
+          kafka: OFF
+      hibernate: OFF
+        
 
   pattern:
     date-format: yyyy-dd-MM HH:mm:ss.SSS
     console: '%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%-20.20thread] %-38X{X-CorrelationId:-00000000-0000-0000-0000-000000000000} %-30.30logger{0} : %msg%n'
 
 application-config:
+  maintenance-mode: 'ON'
+  maintenance-message: 'Reseller, Sorry the service is under maintenance! Please try again later.'
+  endpoints-auth-whitelist:
+    - "/v3/api-docs"
+    - "/swagger-ui"
+    - "/actuator"
+    - "/env"
   microservices:
     ocs-service:
       base-url: "https://prd-apiserver.camgsm.com.kh/services/surepay"
+    sms-service:
+      base-url: "https://prd-apiserver.camgsm.com.kh/sms-transmit/v1/accounts/%s"
 
