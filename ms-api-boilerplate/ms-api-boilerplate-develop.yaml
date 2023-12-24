@@ -91,17 +91,17 @@ application-config:
           en: 'Invalid request plan .'
         description: "plan name invalid"
 
-   - subscribe-success:
-      code: "0000"
-      message:
-        en: "You subscribed to Reseller Plus $1. Next Renewal: {next_date}. To check balance dial *1201#"
-        kh: "You subscribed to Reseller Plus $1. Next Renewal: {next_date}. To check balance dial *1201#, Khmer"
-      description: "Successfully subscribed"
+    - subscribe-success:
+        code: "0000"
+        message:
+          en: "You subscribed to Reseller Plus $1. Next Renewal: {next_date}. To check balance dial *1201#"
+          kh: "You subscribed to Reseller Plus $1. Next Renewal: {next_date}. To check balance dial *1201#, Khmer"
+        description: "Successfully subscribed"
 
-   - subscribe-not-enough-balance:
-      code: "0001"
-      message:
-        en: "Not enough balance."
-        kh: "Not enough balance. Khmer"
-      description: "not enough balance"
+    - subscribe-not-enough-balance:
+        code: "0001"
+        message:
+          en: "Not enough balance."
+          kh: "Not enough balance. Khmer"
+        description: "not enough balance"
 
