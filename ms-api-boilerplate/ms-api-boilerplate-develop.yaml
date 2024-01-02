@@ -52,8 +52,7 @@ logging:
       springframework: #ERROR
         cloud:
           stream:
-            binder:
-              binder-exception: OFF
+            binder: OFF
 
   pattern:
     date-format: yyyy-dd-MM HH:mm:ss.SSS
