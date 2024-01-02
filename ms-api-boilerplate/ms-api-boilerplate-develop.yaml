@@ -49,7 +49,11 @@ management:
 logging:
   level:
     org:
-      springframework: ERROR
+      springframework: #ERROR
+        cloud:
+          stream:
+            binder:
+              binder-exception: OFF
 
   pattern:
     date-format: yyyy-dd-MM HH:mm:ss.SSS
