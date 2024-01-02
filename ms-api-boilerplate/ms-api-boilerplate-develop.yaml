@@ -70,16 +70,19 @@ application-config:
     billing-service:
       base-url: "https://prd-apiserver.camgsm.com.kh/services/proxyBilling"
       request-timeout-millisecond: 4000
+    sms-catalog-service:
+      base-url: "http://service-message-catalog-service.business-logic-layer.svc.cluster.local:8191/ServiceMessageCatalog/v1/ServiceName/{service_name}/get?language={language}&method={method}&error_code={error_code}&type={type}"
+      request-timeout-millisecond: 4000
 
   sms-catalogs:
     - system-error:
         code: '0005'
         message:
-          kh: 'Issues on system when provisioning your request", khmer'
+          kh: 'Issues on system when provisioning your request, khmer'
           en: 'Issues on system when provisioning your request'
         description: 'Invalid Account Id !'
     - invalid-account-id:
-        code: '0004'
+        code: '0001'
         message:
           kh: 'Invalid Account Id !, khmer'
           en: 'Invalid Account Id !'
@@ -91,17 +94,17 @@ application-config:
           en: 'Invalid request plan .'
         description: "plan name invalid"
 
-   - subscribe-success:
-       code: "0000"
-       message:
-         en: "You subscribed to Reseller Plus $1. Next Renewal: {next_date}. To check balance dial *1201#"
-         kh: "You subscribed to Reseller Plus $1. Next Renewal: {next_date}. To check balance dial *1201#, Khmer"
-       description: "Successfully subscribed"
+    - subscribe-success:
+        code: "0000"
+        message:
+          en: "You subscribed to Reseller Plus $1. Next Renewal: {next_date}. To check balance dial *1201#"
+          kh: "You subscribed to Reseller Plus $1. Next Renewal: {next_date}. To check balance dial *1201#, Khmer"
+        description: "Successfully subscribed"
 
-   - subscribe-not-enough-balance:
-       code: "0001"
-       message:
-         en: "Not enough balance."
-         kh: "Not enough balance. Khmer"
-       description: "not enough balance"
+    - subscribe-not-enough-balance:
+        code: "0001"
+        message:
+          en: "Not enough balance."
+          kh: "Not enough balance. Khmer"
+        description: "not enough balance"
 
