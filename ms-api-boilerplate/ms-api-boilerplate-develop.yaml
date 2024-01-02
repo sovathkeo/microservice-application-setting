@@ -12,7 +12,7 @@ spring:
       connection-timeout: 3000
 
   kafka:
-    required: true
+    required: false
     bootstrap-servers: qa-kaf-1.camgsm.com.kh:9092
 
   redis:
