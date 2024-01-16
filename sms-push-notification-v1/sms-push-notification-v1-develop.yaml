@@ -64,6 +64,24 @@ logging:
     date-format: yyyy-dd-MM HH:mm:ss.SSS
     console: '%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%-20.20thread] %-38X{X-CorrelationId:-00000000-0000-0000-0000-000000000000} %-30.30logger{0} : %msg%n'
 
+app:
+  mock:
+    enabled: false
+    source-addr: "Cellcard"
+    destination-addr: "85599204681"
+  smpp:
+    host: 10.10.13.17
+    port: 2875
+    system-id: "DevTeamsTXTest"
+    password: "Dev@555"
+    system-type: "VMCWI"
+    address-range: "8080"
+    connection-timeout: 15000
+    rateLimiter-tps: 200
+    rateLimiter-warmup-period: 5
+    loop-back-rate: 20
+    transaction-timer: 10000
+
 application-config:
   maintenance-mode: 'ON'
   maintenance-message: 'Sorry the service is under maintenance! Please try again later.'
