@@ -1,5 +1,8 @@
 server:
-  port: 8080
+  port: ${SERVER_PORT:9080}
+  servlet:
+    session:
+      timeout: 15s
 
 spring:
   
@@ -11,16 +14,20 @@ spring:
     hikari:
       connection-timeout: 3000
 
+  jmx:
+    enabled: false
+  main:
+    banner-mode: off
+
   kafka:
-    required: true
+    required: false
     bootstrap-servers: qa-kaf1.camgsm.com.kh:9092
-    group-id: sovath-test-1
 
   redis:
-      host: 172.16.101.164
-      port: 32075
-      password: UOWMh5uVKi
-      timeout: 3000
+    host: 172.16.101.164
+    port: 32075
+    password: UOWMh5uVKi
+    timeout: 3000
 
 jpa:
   hibernate:
@@ -50,71 +57,34 @@ management:
 logging:
   level:
     org:
-      springframework:
-        boot: ERROR
-        web: OFF
-        security: OFF
-      apache:
-          kafka: OFF
-      hibernate: OFF
-        
+      springframework: #ERROR
+        cloud: OFF
 
   pattern:
     date-format: yyyy-dd-MM HH:mm:ss.SSS
-    console: '%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level 1 [%-20.20thread] %-38X{X-CorrelationId:-00000000-0000-0000-0000-000000000000} %-30.30logger{0} : %msg%n'
+    console: '%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%-20.20thread] %-38X{X-CorrelationId:-00000000-0000-0000-0000-000000000000} %-30.30logger{0} : %msg%n'
+
+app:
+  mock:
+    enabled: false
+    source-addr: "Cellcard"
+    destination-addr: "85599204681"
+  smpp:
+    host: 10.10.13.17
+    port: 2875
+    system-id: "DevTeamsTXTest"
+    password: "Dev@555"
+    system-type: "VMCWI"
+    address-range: "8080"
+    connection-timeout: 15000
+    rateLimiter-tps: 200
+    rateLimiter-warmup-period: 5
+    loop-back-rate: 20
+    transaction-timer: 10000
 
 application-config:
-  maintenance-mode: 'OFF'
-  maintenance-message: 'ms-api-boilerplate, Sorry the service is under maintenance! Please try again later.'
-  endpoints-auth-whitelist:
-    - "/v3/api-docs"
-    - "/swagger-ui"
-    - "/actuator"
-    - "/env"
+  maintenance-mode: 'ON'
+  maintenance-message: 'Sorry the service is under maintenance! Please try again later.'
   global-request-timeout-millisecond: 5
   global-connect-timeout-millisecond: 10000
-  microservices:
-    ocs-service:
-      base-url: "https://prd-apiserver.camgsm.com.kh/services/surepay"
-      request-timeout-millisecond: 4000
-    sms-service:
-      base-url: "https://prd-apiserver.camgsm.com.kh/sms-transmit/v1/accounts/%s"
-      request-timeout-millisecond: 4000
-    billing-service:
-      base-url: "https://prd-apiserver.camgsm.com.kh/services/proxyBilling"
-      request-timeout-millisecond: 4000
-
-  sms-catalogs:
-    - system-error:
-        code: '0005'
-        message:
-          kh: 'Issues on system when provisioning your request", khmer'
-          en: 'Issues on system when provisioning your request'
-        description: 'Invalid Account Id !'
-    - invalid-account-id:
-        code: '0004'
-        message:
-          kh: 'Invalid Account Id !, khmer'
-          en: 'Invalid Account Id !'
-        description: 'Invalid Account Id !'
-    - invalid-request-plan:
-        code: "0005"
-        message:
-          kh: 'Invalid request plan. Khmer'
-          en: 'Invalid request plan .'
-        description: "plan name invalid"
-
-    - subscribe-success:
-        code: "0000"
-        message:
-          en: "You subscribed to Reseller Plus $1. Next Renewal: {next_date}. To check balance dial *1201#"
-          kh: "You subscribed to Reseller Plus $1. Next Renewal: {next_date}. To check balance dial *1201#, Khmer"
-        description: "Successfully subscribed"
-
-    - subscribe-not-enough-balance:
-        code: "0001"
-        message:
-          en: "Not enough balance."
-          kh: "Not enough balance. Khmer"
-        description: "not enough balance"
 
